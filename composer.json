@@ -1,8 +1,8 @@
 {
-    "name": "atl15/googleanalyticsbundle",
+    "name": "atolye15/googleanalyticsbundle",
     "type": "symfony-bundle",
     "description": "Symfony2 Google Analytics Bundle",
-    "keywords": ["Symfony", "datagrid"],
+    "keywords": ["Symfony", "google analytics", "analytics"],
     "homepage": "https://github.com/atolye15/GoogleAnalyticsBundle.git",
     "authors": [
         {
