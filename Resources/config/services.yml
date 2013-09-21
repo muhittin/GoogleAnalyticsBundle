@@ -1,0 +1,8 @@
+parameters:
+    atl15.ga.class: ATL15\GoogleAnalyticsBundle\Controller\GoogleAnalyticsController
+
+services:
+    analytics:
+        class: "%atl15.ga.class%"
+        arguments: [@request, @session, %app_name%, %client_id%, %client_secret%, %developer_key%, %redirect_uri%, %analytics_account%]
+        scope: request
