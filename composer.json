@@ -32,10 +32,5 @@
         "psr-0": { "ATL15\\GoogleAnalyticsBundle": "" }
     },
     "target-dir": "ATL15/GoogleAnalyticsBundle",
-    "minimum-stability": "dev",
-    "extra": {
-        "branch-alias": {
-            "master": "0.1-dev"
-        }
-    }
+    "minimum-stability": "dev-master"
 }
