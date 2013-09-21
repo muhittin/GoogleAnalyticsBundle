@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Symfony2 Google Analytics Bundle",
     "keywords": ["Symfony", "google analytics", "analytics"],
-    "homepage": "https://github.com/atolye15/GoogleAnalyticsBundle.git",
+    "homepage": "https://github.com/atolye15/GoogleAnalyticsBundle",
     "authors": [
         {
             "name": "R. Canser Yanbakan",
