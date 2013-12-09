@@ -2,17 +2,15 @@
 
 namespace ATL15\GoogleAnalyticsBundle\Controller;
 
-use ATL15\GoogleAnalyticsBundle\Src\GoogleApi\Auth\OAuth2,
-    ATL15\GoogleAnalyticsBundle\Src\GoogleApi\Contrib\AnalyticsService,
+use ATL15\GoogleAnalyticsBundle\Src\GoogleApi\Contrib\AnalyticsService,
     ATL15\GoogleAnalyticsBundle\Src\GoogleApi\Contrib\Oauth2Service,
     Symfony\Bundle\FrameworkBundle\Controller\Controller,
     ATL15\GoogleAnalyticsBundle\Src\GoogleApi\GoogleClient,
     ATL15\GoogleAnalyticsBundle\Src\GoogleApi\Contrib\Google_AnalyticsService,
     Symfony\Component\HttpFoundation\Request,
-    Symfony\Component\HttpFoundation\Session\Session,
-    Symfony\Component\HttpFoundation\JsonResponse;
+    Symfony\Component\HttpFoundation\Session\Session;
 
-class GoogleAnalyticsController extends Controller
+class GoogleAnalyticsOAuthController extends Controller
 {
     public      $available_metrics = array("visitors", "newVisits", "percentNewVisits", "visits", "bounces", "pageviews"),
                 $available_dimensions = array("date", "year", "month", "week", "day", "hour", "yearWeek", "dateHour", "nthMonth", "nthWeek", "nthDay", "isoWeek", "dayOfWeek", "dayOfWeekName");
@@ -38,14 +36,14 @@ class GoogleAnalyticsController extends Controller
                 $request;
 
 
-    public function __construct(Request $request, Session $session, $app_name, $client_id, $client_secret, $developer_key, $redirect_uri, $analytics_account)
+    public function __construct(Request $request, Session $session, $analytics_parameters)
     {
-        $this->app_name             = $app_name;
-        $this->client_id            = $client_id;
-        $this->client_secret        = $client_secret;
-        $this->developer_key        = $developer_key;
-        $this->redirect_uri         = $redirect_uri;
-        $this->analytics_account    = $analytics_account;
+        $this->app_name             = $analytics_parameters["app_name"];
+        $this->client_id            = $analytics_parameters["client_id"];
+        $this->client_secret        = $analytics_parameters["client_secret"];
+        $this->developer_key        = $analytics_parameters["developer_key"];
+        $this->redirect_uri         = $analytics_parameters["redirect_uri"];
+        $this->analytics_account    = $analytics_parameters["analytics_account"];
         $this->session              = $session;
         $this->request              = $request;
 
